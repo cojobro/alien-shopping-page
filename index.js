@@ -59,9 +59,7 @@ const items = [
 
 updateCards(items);
 
-// ---------------------
-// Search Functionality
-// ---------------------
+
 const searchInput = document.getElementById('search');
 const searchButton = document.getElementById('search-button');
 
@@ -84,3 +82,66 @@ searchInput.addEventListener('keypress', (e) => {
         performSearch();
     }
 });
+
+
+// Add sorting function
+const sort = document.getElementById('sort');
+const order = document.getElementById('order');
+
+// Function to update order option texts based on the sort type.
+function updateOrderOptions() {
+    if (sort.value === "price") {
+        order.options[0].text = "High to Low";  // Option with value "asc"
+        order.options[1].text = "Low to High";  // Option with value "desc"
+    } else if (sort.value === "name") {
+        order.options[0].text = "A-Z";  // Option with value "asc"
+        order.options[1].text = "Z-A";  // Option with value "desc"
+    }
+}
+
+function updateOrder() {
+    if (sort.value === "price") {
+        if (order.value === "asc") {
+            const sortedItems = items.sort((a,b) => { return b.price - a.price });
+            updateCards(sortedItems);
+        } else {
+            const sortedItems = items.sort((a,b) => { return a.price - b.price });
+            updateCards(sortedItems);
+        }
+    } else if (sort.value === "name") {
+        if (order.value === "asc") {
+            const sortedItems = items.sort((a,b) => { 
+                if (a.name.toLowerCase() < b.name.toLowerCase()) {
+                    return -1;
+                } else if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+             });
+            updateCards(sortedItems);
+        } else {
+            const sortedItems = items.sort((a,b) => { 
+                if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                    return -1;
+                } else if (a.name.toLowerCase() < b.name.toLowerCase()) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+             });
+            updateCards(sortedItems);
+        }
+    }
+}
+
+// Listen for changes on the sort dropdown.
+sort.addEventListener("change", function() {
+    updateOrderOptions();
+    updateOrder();
+});
+
+order.addEventListener("change", updateOrder);
+
+updateOrderOptions();
+updateOrder();
