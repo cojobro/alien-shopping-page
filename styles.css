@@ -1,7 +1,6 @@
-
 body {
     background-color: #9caf88;
-    font-family: 'Courier New', Courier, monospace; /* Interesting font */
+    font-family: 'Courier New', Courier, monospace;
     margin: 20px;
     justify-content: center;
     min-height: 100vh;
@@ -41,10 +40,10 @@ div {
 }
 
 #search {
-    flex: 1; /* This makes the input grow to take up available space */
+    flex: 1;
     margin-right: 10px; 
     font-size: 24px;
-    font-family: 'Courier New', Courier, monospace; /* Interesting font */
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 1000;
     color: rgb(98, 89, 78);
     border: 2px solid rgb(98, 89, 78);
@@ -54,7 +53,7 @@ div {
 
 #search-button {
     font-size: 24px;
-    font-family: 'Courier New', Courier, monospace; /* Interesting font */
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 800;
     color: rgb(69, 63, 55);
     background-color: #ffd772;
@@ -74,21 +73,19 @@ div {
 }
 
 select {
-    /* Remove default appearance */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    /* Add custom arrow via background image */
     background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 10 10"><polygon points="0,0 10,0 5,5" fill="black"/></svg>')
       no-repeat right center;
-    background-size: 12px 12px; /* Set the size of the custom arrow */
-    background-position: right 10px center; /* Moves arrow 20px from the right edge */
+    background-size: 12px 12px;
+    background-position: right 10px center;
 }
 
 #sort {
     font-size: 24px;  
     font-weight: 800; 
-    font-family: 'Courier New', Courier, monospace; /* Interesting font */
+    font-family: 'Courier New', Courier, monospace;
     background-color: antiquewhite;
     padding: 10px;
     border: 4px solid rgb(98, 89, 78);
@@ -101,7 +98,7 @@ select {
 #order {
     font-size: 24px;  
     font-weight: 800; 
-    font-family: 'Courier New', Courier, monospace; /* Interesting font */
+    font-family: 'Courier New', Courier, monospace;
     background-color: antiquewhite;
     padding: 10px;
     border: 4px solid rgb(98, 89, 78);
@@ -118,7 +115,7 @@ select {
 .card {
     width: 40%;
     margin: 40px;
-    font-family: 'Courier New', Courier, monospace; /* Interesting font */
+    font-family: 'Courier New', Courier, monospace;
     background-color: antiquewhite;
     border: 5px solid rgb(98, 89, 78);
     border-radius: 25px;
@@ -145,4 +142,53 @@ select {
 
 .card-text p {
     font-weight: 800;
+}
+
+/* Responsive adjustments for iPhone and smaller screens */
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 10px;
+    }
+    header {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    header p {
+        font-size: 18px;
+    }
+    .search-container,
+    .sorting-container {
+        max-width: 90%;
+        padding: 5px;
+    }
+    #search,
+    #search-button {
+        font-size: 18px;
+        padding: 8px;
+    }
+    #sort {
+        font-size: 18px;
+        padding: 8px;
+        padding-right: 25px;
+        margin: 10px;
+    }
+    #order {
+        font-size: 18px;
+        padding: 8px;
+        padding-right: 30px;
+        margin: 10px;
+    }
+    .card {
+        width: 90%;
+        margin: 20px auto;
+    }
+    .card-text h3 {
+        font-size: 20px;
+    }
+    .card-text p {
+        font-size: 16px;
+    }
 }
