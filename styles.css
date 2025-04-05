@@ -188,7 +188,8 @@ select {
         margin: 20px auto;
     }
     .card-text h3 {
-        font-size: 20px;
+        font-size: 18px;
+        margin-left: 10px;
     }
     .card-text p {
         font-size: 16px;
