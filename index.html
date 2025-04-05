@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Shopping Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Alien Shopping Page</h1>
+        <p>Explore our intergalactic products!</p>
+    </header>
+    <main>
+        <div class = "search-container">
+            <input type="text" id="search" placeholder="Search for products...">
+            <button id="search-button">Search</button>
+        </div>
+        <div class = "sorting-container">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+                <option value="price">Price</option>
+                <option value="name">Name</option>
+            </select>
+            <select id="order">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+        </div>
+        <div class="product-list" id="product-list">
+            <!-- Product items will be dynamically inserted here -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Alien Shopping Page</p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
