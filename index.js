@@ -131,6 +131,7 @@ function updateOrder() {
                 }
              });
             updateCards(sortedItems);
+            updateOrder();
         }
     }
 }
