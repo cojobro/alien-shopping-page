@@ -140,9 +140,13 @@ function updateOrder() {
 sort.addEventListener("change", function() {
     updateOrderOptions();
     updateOrder();
+    performSearch();
 });
 
-order.addEventListener("change", updateOrder);
+order.addEventListener("change", function() {
+    updateOrder();
+    performSearch();
+});
 
 updateOrderOptions();
 updateOrder();
